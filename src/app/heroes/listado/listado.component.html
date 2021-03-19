@@ -1,0 +1,27 @@
+<p>listado works!</p>
+
+<!-- Es lo suficientemente eficiente como para saber que la condición no se cumple -->
+
+<div *ngIf=" heroeBorrado; else noBorrado"> 
+    <h3>Héroe Borado <small>{{ heroeBorrado }}</small> </h3>
+</div>
+
+<!-- Referencia local -->
+<ng-template #noBorrado> 
+    <h3>No ha borrado nada </h3>
+</ng-template>
+
+
+
+<button (click) = "borrarheroe()">
+    Borrar
+</button>
+
+
+<ul>
+
+    <!-- <li>{{heroes [0]}}</li> -->
+    <li *ngFor="let heroe of heroes; let i=index">
+        {{i+1}} - {{heroe}}    
+    </li>    
+</ul>
